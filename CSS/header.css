@@ -1,0 +1,85 @@
+
+
+header {
+    width: 100vw;
+    /* background-image: url("../images/header.png"); */
+    background-color: var(--primary__color-navbar);
+    position: fixed;
+    z-index: 100;
+    top: 0;
+}
+
+
+.nav__bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    position: relative;
+    top: 0;
+}
+
+.nav__logo{
+    position: relative;
+    top: -9px;
+}
+
+.nav__input {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.nav__list {
+    display: flex;
+    gap: 5px;
+}
+
+.nav__item,
+.nav__input {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--primary__color-text);
+    text-wrap: nowrap;
+}
+
+.nav__list li{
+    color: var(--primary__color-text);
+}
+
+.nav__item:hover,
+.nav__input a:hover{
+    background-color: #e692b4;
+}
+
+
+.nav__item,
+.nav__input-contract,
+.nav__input-signUp,
+.nav__input-signIn {
+    min-width: 50px;
+    color: (var(--primary__color-text));
+    padding: 13px;
+
+}
+
+.slide__img {
+    width: 100%;
+    margin-top: 50px;
+    /* object-fit: cover; */
+}
+
+
+.intro__info-more {
+    font-size: 1.8rem;
+    color: orange;
+    text-decoration: underline;
+    position: absolute;
+    bottom: 30px;
+
+}
+
+.intro__info-more-bottom {
+    right: 30px;
+}
+

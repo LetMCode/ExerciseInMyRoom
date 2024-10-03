@@ -1,0 +1,36 @@
+
+/* footer */
+footer {
+    background-color: #000;
+    width: 100%;
+    height: 200px;
+    padding-top: 30px;
+
+}
+
+.footer__possess,
+.footer__title {
+    font-size: 2.5rem;
+    color: hsl(210, 8%, 80%);
+
+}
+.footer__list {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.footer__social {
+    color: hsl(210, 8%, 80%);
+
+    font-size: 1.6rem;
+    text-decoration: underline;
+}
+
+.footer__social + .footer__social {
+    margin-left: 15px;
+}
+
+.footer__reset {
+    color: hsl(210, 8%, 80%);
+    font-size: 1.8rem;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freeeze</title>
+    <link rel="stylesheet" href="../../node_modules/normalize.css/normalize.css">
+    
+    <link rel="stylesheet" href="../../CSS/header.css">
+    <link rel="stylesheet" href="../../CSS/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon-c.icon.ico">
+    <link rel="stylesheet" href="../../CSS/form.css">
+    <link rel="stylesheet" href="../../CSS/common.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+   <main>
+    <div class="container">
+        <div class="content">
+            <div class="content__map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15715.439537536193!2d105.76483486226697!3d10.02841922197798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0895a51d60719%3A0x9d76b0035f6d53d0!2zxJDhuqFpIGjhu41jIEPhuqduIFRoxqE!5e0!3m2!1svi!2s!4v1725611614947!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="content__info">
+                <div class="info-wrap">
+                    <h1 class="info-heading">
+                        LIÊN HỆ
+                    </h1>
+                    <!-- <img src="./img/check-in.png" alt="" class="info-icon"> -->
+                </div>
+                <div class="info__list">
+                    <div class="info__item">
+                        <p class="info-title">Địa chỉ chúng tôi</p>
+                        <p class="info-desc">Khu II, Đ. 3 Tháng 2, Xuân Khánh, Ninh Kiều, Cần Thơ, Việt Nam</p>
+                    </div>
+                    <div class="info__item">
+                        <p class="info-title">Email chúng tôi</p>
+                        <p class="info-desc">Freezevn@gmail.com</p>
+                    </div>
+                    <div class="info__item">
+                        <p class="info-title">Điện thoại</p>
+                        <p class="info-desc">0342 1900 18</p>
+                    </div>
+                    <div class="info__item">
+                        <p class="info-title">Thời gian làm việc</p>
+                        <p class="info-desc">Từ 9:30 - 22:00 ( T2-T7 ) | CN từ 9:30 - 21:30</p>
+                    </div>
+                </div>
+                <div class="info-send-contact">
+                    <h2 style="font-size: 2.5rem;" class="info-send__heading">
+                        Gửi thắc mắc cho chúng tôi
+                    </h2>
+                    <form action="POST" class="form" id="form-3">
+                        <fieldset>
+                            <legend>Góp ý</legend>
+                            <div class="form-group">
+                                <input id="name" type="text" name="name" class="form-control">
+                                <label for="name" class="form-label">
+                                    Họ Tên:
+                                </label>
+                                <span class="form-message"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input id="email" type="text" name="email" class="form-control">
+                                <label for="email" class="form-label focus">
+                                    Email:
+                                </label>
+                                <span class="form-message"></span>
+
+                            </div>
+                            
+                            <div class="form-title">
+                                <label for="">Chủ đề:</label>
+                                <select name="" id="" class="form-select">
+                                    <option value="reportProduct" class="form-option">Về Sản Phẩm / Dịch Vụ</option>
+                                    <option value="reportSale" class="form-option">Về Ưu Đãi Thành Viên</option>
+                                    <option value="reportStaff" class="form-option">Về Tin Tuyển Dụng</option>
+                                </select>
+                            </div>
+
+                            <div class="form-textarea">
+                                <label for="textarea" class="form-textarea__heading">Nội dung:</label>
+                                <textarea placeholder="Nội dung cần liên hệ" name="textarea" id="textarea"></textarea>
+                            </div>
+
+                            <div class="form-submit">
+                                <button  class="btn-submit submit-signUp">Gửi</button>
+                            </div>
+                            
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   </main>
+        
+    <script type="module" >
+        import renderHeader from '../../Js-modules/header.js'
+        import renderFooter from '../../Js-modules/footer.js'
+        import appSearch from '../../Js-modules/search.js'
+   </script>
+    <script src="../../Js-modules/validator.js"></script>
+   <script>
+    Validator({
+            form: '#form-3',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired("#name"),
+                Validator.isEmail('#email'),
+            ]
+        ,
+        onSubmit: function(data) {
+
+        },
+        }) 
+   </script>
+
+</body>
+
+</html>

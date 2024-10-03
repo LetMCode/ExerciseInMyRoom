@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freeeze</title>
+    <link rel="stylesheet" href="../../node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="../../CSS/header.css">
+    <link rel="stylesheet" href="../../CSS/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon-c.icon.ico">
+    <link rel="stylesheet" href="../../CSS/form.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../../CSS/common.css">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <form action="POST" class="form" id="form-1">
+                <fieldset>
+                    <legend>Đăng ký</legend>
+
+                    <div class="form-group">
+                        <input id="email" type="text" name="email" class="form-control ">
+                        <label for="email" class="form-label focus">
+                            Email:
+                        </label>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input id="passwd" type="password" name="passwd" class="form-control ">
+                        <label for="passwd" class="form-label focus">
+                            Mật khẩu:
+                        </label>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input id="password_confirmation" type="password" name="password_confirmation" class="form-control ">
+                        <label for="password_confirmation" class="form-label focus">
+                            Nhập lại Mật khẩu:
+                        </label>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <span for="passwd" class="form-group__heading">
+                            Cấp độ thành viên
+                        </span>
+                        <div class="form__list-radio">
+                            <input type="radio" checked name="rank" id="silver">
+                            <label for="silver">Bạc</label>
+                            <input type="radio" name="rank" id="gold">
+                            <label for="gold">Vàng</label>
+                            <input type="radio" name="rank" id="platinum">
+                            <label for="platinum">Bạch Kim</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="font-size: 1.4rem; text-align: center;" for="file-upload"
+                            class="form-custom__file-upload">
+                            Chọn Ảnh Đại Diện
+                        </label>
+                        <input type="file" name="file-upload" id="file-upload" accept="image/*" size="60">
+                        <span class="form-message"></span>
+
+                    </div>
+
+
+
+                    <div class="form-more">
+                        <div class="form-item">
+                            <span>
+                                Thông qua việc tạo tài khoản, bạn đồng ý với
+                            </span>
+                            <a href="#!" class="form-forgot">Điều khoản</a>
+                            <span>&</span>
+                            <a href="#!" class="form-Sign">Quyền riêng tư</a>
+                            <span>của chúng tôi</span>
+                        </div>
+                    </div>
+                    <div class="form-submit">
+                        <button class="btn-submit submit-signUp">Đăng ký</button>
+                        <button class="btn-submit submit-cancel">Hủy</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+    <script type="module">
+        import renderHeader from '../../Js-modules/header.js'
+        import renderFooter from '../../Js-modules/footer.js'
+        import appSearch from '../../Js-modules/search.js'
+   </script>
+    <script src="../../Js-modules/validator.js"></script>
+
+    <script>
+        Validator({
+            form:'#form-1',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isEmail('#email'),
+                Validator.isPasswd('#passwd',8),
+                Validator.isConfirmed('#password_confirmation',()=>{
+                    return document.querySelector(`#form-1  #passwd`).value
+                }),
+            ]
+        ,
+        onSubmit: function(data) {
+
+        }
+        }) 
+    </script>
+</body>
+</html>

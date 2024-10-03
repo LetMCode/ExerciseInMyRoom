@@ -1,0 +1,211 @@
+
+.slide {
+    display: flex;
+    justify-content: center;
+}
+
+/* intro */
+
+.intro__body {
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.intro__heading {
+    text-align: center;
+    font-size: 2.8rem;
+    margin: 20px 0;
+    color: var(--primary__color-text);
+
+}
+
+.intro__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.intro__media {
+    margin: 0 auto;
+}
+
+.intro__media-titel {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--primary__color-text);
+
+}
+
+.intro__media-img{
+    position: relative;
+    animation-name: rightToLeft;
+    animation-duration: 2000ms;
+    z-index: -1;
+}
+
+.intro__media-wrap{
+    width: 360px;
+    height: 260px;
+    background-color: #fff;
+    border: 3px solid #ccc;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation-name: leftToRight;
+    animation-duration: 3500ms;
+    z-index: 0;
+    /* animation-iteration-count: infinite; */
+    
+}
+@keyframes leftToRight {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes rightToLeft {
+    from {
+        right: -100%;
+    }
+    to {
+        right: 0;
+    }
+}
+
+.intro__media-wrap::after{
+    content: "";
+    width: 200px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -35px;
+}
+
+.intro__media-video{
+    border: 15px solid #ccc;
+    border-radius: 10px;
+    width: 260px;
+    height: 160px;
+    box-shadow: 10px 18px 18px 0px rgba(255, 155, 121, 0.12);
+    
+}
+
+.intro__info {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.intro__info-desc {
+    min-width: 300px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-break: unset;
+    color: var(--primary__color-text);
+
+}
+
+
+
+/* tutorial */
+.tutorial {
+    padding: 30px 0;
+}
+
+.tutorial__heading {
+    font-size: 2.5rem;
+    text-align: center;
+    padding-bottom: 40px;
+    color: var(--primary__color-text);
+
+}
+.tutorial__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+.tutorial__card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.tutorial__card-label {
+    font-size: 1.8rem;
+    color: var(--primary__color-text);
+
+}
+
+.tutorial__card-desc {
+    font-size: 1.6rem;
+    color: var(--primary__color-text);
+
+}
+
+.tutorial__card-left ul li {
+    list-style-type: disc;
+    font-size: 1.8rem;
+    color: var(--primary__color-text);
+
+}
+
+.tutorial__card-right ol li {
+    list-style-type: decimal;
+    font-size: 1.8rem;
+    color: var(--primary__color-text);
+
+}
+
+/* order */
+
+.order {
+    padding: 30px 0;
+}
+
+.order__heading {
+    font-size: 4rem;
+    text-align: center;
+    color: var(--primary__color-text);
+
+}
+
+.order__img {
+    width: 100px;
+    height: 100px;
+}
+
+.order_list {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 50px;
+}
+
+.order__item {
+    padding: 30px;
+    background: var(--primary__color-btn);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 35px;
+}
+
+.order__item:active {
+    opacity: 0.8;
+}
+
+.order__item-name {
+    color: #000;
+    margin-top: 15px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}

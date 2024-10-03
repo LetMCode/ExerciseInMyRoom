@@ -1,0 +1,42 @@
+
+.form__list-radio label{
+    font-size: 1.4rem;
+}
+
+.form__list-radio{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form__list-radio > label + input{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form__list-radio label{
+    cursor: pointer;
+    margin-right: 50px;
+    /* padding-right: 5px; */
+}
+
+.form__list-radio input{
+    margin-left: 30px;
+}
+
+.form-custom__file-upload{
+    border: 1px solid #000;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.form-custom__file-upload:active{
+    background-color: #ccc;
+}
+
+
+
+input[type=file]::file-selector-button {
+  display: none;
+}

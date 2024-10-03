@@ -1,0 +1,130 @@
+main{
+    /* padding: 100px 0; */
+}
+
+.content{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 100px;
+}
+
+.content__info{
+    width: 100%;
+    padding: 100px;
+    border-left: 1px solid #ccc;
+}
+
+.content__map{
+    margin-top: 100px;
+}
+
+.info-wrap{
+    display: flex;
+}
+
+.info-heading{
+    font-size: 4.5rem;
+
+}
+
+.info-heading::after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    margin-top: 30px;
+    background: #31302d;
+    margin-bottom: 50px;
+}
+
+.info-icon{
+    width: 50px;
+    height: 50px;
+}
+
+.info__item{
+    margin-bottom: 30px;
+}
+
+.info-title{
+    opacity: 0.6;
+    font-size: 1.5rem;
+}
+
+.info-desc{
+    font-size: 1.6rem;
+}
+
+
+fieldset{
+    width: 100%;
+    
+}
+
+legend {
+    color: #000;
+    font-size: 2.0rem;
+}
+.info-send__heading::after{
+    content: "";
+    display: block;
+    margin-top: 25px;
+    width: 30px;
+    height: 3px;
+    background: #31302d;
+    margin-bottom: 20px;
+}
+
+.form-control{
+    padding: 10px;
+}
+
+
+
+.btn-submit{
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding: 10px;
+    margin-bottom: 16px;
+}
+
+
+.form-title,
+.form-textarea,
+.form-submit{
+    margin-left: 10px;
+}
+
+.form-textarea{
+    margin: 20px 10px;
+}
+
+.form-textarea,
+.form-title{
+    display: flex;
+    align-items: center;
+}
+
+.form-textarea >label,
+.form-title >label{
+    padding-right: 10px;
+}
+
+.form-select{
+    cursor: pointer;
+    padding: 2px;
+    font-size: 1.4rem;
+}
+
+.form-textarea{
+    flex-direction: column;
+}
+#textarea{
+    width: 75%;
+    height: 75%;
+    font-size: 1.2rem;
+}
+
+label{
+    font-size: 1.6rem;
+}
