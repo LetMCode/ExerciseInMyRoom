@@ -6,7 +6,7 @@ function renderHeader() {
     const htmls = `
             <div class="container container-product">
                 <nav class="nav__bar" id="nav__bar">
-                    <img src="../../images/logo.png" alt="" class="nav__logo">
+                    <a href="../../index.html"><img src="../../images/logo.png" alt="" class="nav__logo"></a>
                     <ul class="nav__list">
                         <li>
                             <a href="../../index.html" class="nav__item">Trang chủ</a>

@@ -1,15 +1,28 @@
 function Validator(options) {
     var formElement = document.querySelector(options.form);
+    var selectorRules = {};
 
     function validate(inputElement, rule) {
         var errorElement = inputElement.parentElement.querySelector(
             options.errorSelector
         );
-        var errorMessage = rule.test(inputElement.value);
+        var errorMessage;
+
+        var rules = selectorRules[rule.selector];
+
+        for (var i = 0; i < rules.length ; ++i) {
+            errorMessage = rules[i](inputElement.value);
+            if (errorElement) break;
+        }
+
         if (errorMessage) {
             errorElement.innerText = errorMessage;
             inputElement.parentElement.classList.add("invalid");
+        } else {
+            errorElement.innerText = "";
+            inputElement.parentElement.classList.remove("invalid");
         }
+        return !errorMessage;
     }
 
     function changeCSS(inputElement) {
@@ -21,16 +34,54 @@ function Validator(options) {
     }
 
     if (formElement) {
+        formElement.onsubmit = (e) => {
+            e.preventDefault();
+            var isFormValid = true;
+
+            options.rules.forEach(function (rule) {
+                var inputElement = formElement.querySelector(rule.selector);
+                var isValid = validate(inputElement, rule);
+
+                if (!isValid) {
+                    changeCSS(inputElement);
+                    isFormValid = false;
+                }
+            });
+            if (isFormValid) {
+                if (typeof options.onSubmit === "function") {
+                    var enableInputs = formElement.querySelectorAll(
+                        "[name]:not([disabled])"
+                    );
+                    var formValue = Array.from(enableInputs).reduce(
+                        (values, input) => {
+                            return (values[input.name] = input.value) && values;
+                        },
+                        {}
+                    );
+                    options.onSubmit(formValue);
+                }
+            }
+        };
+
         options.rules.forEach((rule) => {
             var errorElement = document.querySelector(".form-message");
             var inputElement = formElement.querySelector(rule.selector);
 
-            inputElement.onfocus = () => {
-                changeCSS(inputElement);
-            };
-            inputElement.onblur = () => {
-                validate(inputElement, rule);
-            };
+            if (Array.isArray(selectorRules[rule.selector])) {
+                selectorRules[rule.selector].push(rule.test);
+            } else {
+                selectorRules[rule.selector] = [rule.test];
+            }
+
+            if (inputElement) {
+                inputElement.onfocus = () => {
+                    changeCSS(inputElement);
+                };
+                inputElement.onblur = () => {
+                    validate(inputElement, rule);
+                };
+            }
+
             inputElement.oninput = () => {
                 errorElement.innerText = "";
                 inputElement.parentElement.classList.remove("invalid");
@@ -43,9 +94,7 @@ Validator.isRequired = (selector, message) => {
     return {
         selector: selector,
         test: function (value) {
-            return value !== "" ?
-            undefined
-            : message || "Vui lòng nhập tên"
+            return value !== "" ? undefined : message || "Vui lòng nhập tên";
         },
     };
 };

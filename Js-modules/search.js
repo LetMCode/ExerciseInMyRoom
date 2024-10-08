@@ -52,12 +52,7 @@ const appSearch = {
     },
 
     handleEvents: function (){
-        const _this = this;
-        inputSearch.onchange=(e)=>{
-            (e.target.value !== "") ?
-            _this.sendInput(e.target.value) : 
-            ""
-        }
+        
     },
     sendInput: (e) =>{
         console.log(e)

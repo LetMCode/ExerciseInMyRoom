@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-    rel="stylesheet">
+        rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../../images/favicon-c.icon.ico">
     <link rel="stylesheet" href="../../CSS/common.css">
     <link rel="stylesheet" href="../../CSS/form.css">
@@ -31,16 +31,16 @@
                         </label>
                         <span class="form-message"></span>
                     </div>
-                    
+
                     <div class="form-group">
-                        <input id="passwd" type="text" name="passwd" class="form-control">
+                        <input id="passwd" type="password" name="passwd" class="form-control">
                         <label for="passwd" class="form-label">
                             Mật khẩu:
                         </label>
                         <span class="form-message"></span>
 
                     </div>
-                    
+
                     <div style="margin-top: -24px;" class="form-more">
                         <div class="form-item">
                             <input style="width: 15px; height: 15px;" type="checkbox" name="" id="checkbox-remember">
@@ -56,38 +56,38 @@
                         </div>
                     </div>
                     <div class="form-submit">
-                        <button  class="btn-submit submit-signUp">Đăng nhập</button>
-                        <button  class="btn-submit submit-cancel">Hủy</button>
+                        <button class="btn-submit submit-signUp">Đăng nhập</button>
+                        <button class="btn-submit submit-cancel">Hủy</button>
                     </div>
-    
+
                 </fieldset>
             </form>
         </div>
     </main>
-    <script type="module" >
+    <script type="module">
         import renderHeader from '../../Js-modules/header.js'
         import renderFooter from '../../Js-modules/footer.js'
         import appSearch from '../../Js-modules/search.js'
-   </script>
-   <script src="../../Js-modules/validator.js"></script>
-   <script>
-    Validator({
-        form:'#form-2',
-        errorSelector: '.form-message',
-        rules: [
-            Validator.isEmail('#email'),
-            Validator.isPasswd('#passwd',8,"Mật khẩu không đúng"),
-        ]
-    ,
-    onSubmit: function(data) {
-
-    }
-    }) 
-</script>
+    </script>
+    <script src="../../Js-modules/validator.js"></script>
+    <script>
+        Validator({
+            form: '#form-2',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isEmail('#email'),
+                Validator.isPasswd('#passwd', 8, "Mật khẩu không đúng"),
+            ]
+            ,
+            onSubmit: function (data) {
+                console.log(data)
+            }
+        }) 
+    </script>
 </body>
 
 <script>
-   
+
 </script>
 
 </html>
